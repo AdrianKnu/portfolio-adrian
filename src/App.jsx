@@ -79,7 +79,7 @@ export default function App() {
           {/* Botones */}
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <a
-              href="/CV Adrian Knuppelholz.pdf"
+              href="CV Adrian Knuppelholz.pdf"
               target="_blank"
               className="px-6 py-3 bg-white/20 border border-white/40 rounded-xl text-lg font-medium hover:bg-white/40 transition"
             >
