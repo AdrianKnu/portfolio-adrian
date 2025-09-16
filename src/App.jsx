@@ -318,7 +318,7 @@ export default function App() {
           target="_blank"
           className="flex items-center gap-2 px-4 py-2 bg-white/20 border border-white/40 rounded-lg hover:bg-white/40 transition"
         >
-          <img src="/logos/github.svg" alt="GitHub" className="w-5 h-5 filter invert" />
+          <img src="logos/github.svg" alt="GitHub" className="w-5 h-5 filter invert" />
           <span>GitHub</span>
         </a>
       </div>
@@ -335,11 +335,11 @@ export default function App() {
       </div>
       <div className="mt-6 flex gap-3 justify-center">
         <a
-          href="https://github.com/AdrianKnu/TPI_TEC_DE_BDD"
+          href="https://github.com/AdrianKnu/portfolio-adrian"
           target="_blank"
           className="flex items-center gap-2 px-4 py-2 bg-white/20 border border-white/40 rounded-lg hover:bg-white/40 transition"
         >
-          <img src="/logos/github.svg" alt="GitHub" className="w-5 h-5 filter invert" />
+          <img src="logos/github.svg" alt="GitHub" className="w-5 h-5 filter invert" />
           <span>GitHub</span>
         </a>
       </div>
@@ -359,7 +359,7 @@ export default function App() {
           target="_blank"
           className="flex items-center gap-2 px-4 py-2 bg-white/20 border border-white/40 rounded-lg hover:bg-white/40 transition"
         >
-          <img src="/logos/github.svg" alt="GitHub" className="w-5 h-5 filter invert" />
+          <img src="logos/github.svg" alt="GitHub" className="w-5 h-5 filter invert" />
           <span>GitHub</span>
         </a>
       </div>
@@ -381,11 +381,11 @@ export default function App() {
       <h3 className="text-2xl font-semibold mb-6">Lenguajes de Programación</h3>
       <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {[
-          { name: "Java", logo: "/logos/java.png", level: "Avanzado" },
-          { name: "Python", logo: "/logos/python.svg", level: "Intermedio" },
-          { name: "PHP", logo: "/logos/php.svg", level: "Intermedio" },
-          { name: "JavaScript", logo: "/logos/javascript.svg", level: "Avanzado" },
-          { name: "C", logo: "/logos/c.svg", level: "Avanzado" },
+          { name: "Java", logo: "logos/java.png", level: "Avanzado" },
+          { name: "Python", logo: "logos/python.svg", level: "Intermedio" },
+          { name: "PHP", logo: "logos/php.svg", level: "Intermedio" },
+          { name: "JavaScript", logo: "logos/javascript.svg", level: "Avanzado" },
+          { name: "C", logo: "logos/c.svg", level: "Avanzado" },
         ].map((lang) => (
           <SkillCard key={lang.name} {...lang} />
         ))}
@@ -397,11 +397,11 @@ export default function App() {
       <h3 className="text-2xl font-semibold mb-6">Frontend & Web Technologies</h3>
       <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {[
-          { name: "HTML5", logo: "/logos/html5.svg", level: "Avanzado" },
-          { name: "CSS3", logo: "/logos/css3.png", level: "Avanzado" },
-          { name: "React", logo: "/logos/react.svg", level: "Intermedio" },
-          { name: "Angular", logo: "/logos/angular.svg", level: "Principiante" },
-          { name: "Vite", logo: "/logos/vite.svg", level: "Intermedio" },
+          { name: "HTML5", logo: "logos/html5.svg", level: "Avanzado" },
+          { name: "CSS3", logo: "logos/css3.png", level: "Avanzado" },
+          { name: "React", logo: "logos/react.svg", level: "Intermedio" },
+          { name: "Angular", logo: "logos/angular.svg", level: "Principiante" },
+          { name: "Vite", logo: "logos/vite.svg", level: "Intermedio" },
         ].map((fw) => (
           <SkillCard key={fw.name} {...fw} />
         ))}
@@ -415,9 +415,9 @@ export default function App() {
         <h3 className="text-2xl font-semibold mb-6">Frameworks Backend</h3>
         <div className="grid gap-6 grid-cols-2 md:grid-cols-3">
           {[
-            { name: "Spring Boot", logo: "/logos/springboot.svg", level: "Intermedio" },
-            { name: "Hibernate", logo: "/logos/hibernate.svg", level: "Intermedio" },
-            { name: "CodeIgniter", logo: "/logos/codeigniter.svg", level: "Avanzado" },
+            { name: "Spring Boot", logo: "logos/springboot.svg", level: "Intermedio" },
+            { name: "Hibernate", logo: "logos/hibernate.svg", level: "Intermedio" },
+            { name: "CodeIgniter", logo: "logos/codeigniter.svg", level: "Avanzado" },
           ].map((fw) => (
             <SkillCard key={fw.name} {...fw} />
           ))}
@@ -429,8 +429,8 @@ export default function App() {
         <h3 className="text-2xl font-semibold mb-6">Bases de Datos</h3>
         <div className="grid gap-6 grid-cols-2 md:grid-cols-2">
           {[
-            { name: "PostgreSQL", logo: "/logos/postgresql.svg", level: "Avanzado" },
-            { name: "MySQL", logo: "/logos/mysql.svg", level: "Avanzado" },
+            { name: "PostgreSQL", logo: "logos/postgresql.svg", level: "Avanzado" },
+            { name: "MySQL", logo: "logos/mysql.svg", level: "Avanzado" },
           ].map((db) => (
             <SkillCard key={db.name} {...db} />
           ))}
@@ -443,11 +443,11 @@ export default function App() {
       <h3 className="text-2xl font-semibold mb-6">Herramientas de Desarrollo</h3>
       <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {[
-          { name: "Git", logo: "/logos/git.svg", level: "Avanzado" },
-          { name: "GitHub", logo: "/logos/github.svg", level: "Avanzado" },
-          { name: "Docker", logo: "/logos/docker.svg", level: "Intermedio" },
-          { name: "Selenium", logo: "/logos/selenium.svg", level: "Intermedio" },
-          { name: "UML", logo: "/logos/uml.svg", level: "Avanzado" },
+          { name: "Git", logo: "logos/git.svg", level: "Avanzado" },
+          { name: "GitHub", logo: "logos/github.svg", level: "Avanzado" },
+          { name: "Docker", logo: "logos/docker.svg", level: "Intermedio" },
+          { name: "Selenium", logo: "logos/selenium.svg", level: "Intermedio" },
+          { name: "UML", logo: "logos/uml.svg", level: "Avanzado" },
         ].map((tool) => (
           <SkillCard key={tool.name} {...tool} />
         ))}
@@ -459,12 +459,12 @@ export default function App() {
       <h3 className="text-2xl font-semibold mb-6">Entornos & Utilidades</h3>
       <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
         {[
-          { name: "Eclipse IDE", logo: "/logos/eclipseide.svg", level: "Avanzado" },
-          { name: "NetBeans IDE", logo: "/logos/apachenetbeanside.svg", level: "Intermedio" },
-          { name: "Visual Studio", logo: "/logos/vscode.png", level: "Avanzado" },
-          { name: "Postman", logo: "/logos/postman.svg", level: "Intermedio" },
-          { name: "Insomnia", logo: "/logos/insomnia.svg", level: "Principiante" },
-          { name: "Virtual Box", logo: "/logos/virtualbox.svg", level: "Intermedio" },
+          { name: "Eclipse IDE", logo: "logos/eclipseide.svg", level: "Avanzado" },
+          { name: "NetBeans IDE", logo: "logos/apachenetbeanside.svg", level: "Intermedio" },
+          { name: "Visual Studio", logo: "logos/vscode.png", level: "Avanzado" },
+          { name: "Postman", logo: "logos/postman.svg", level: "Intermedio" },
+          { name: "Insomnia", logo: "logos/insomnia.svg", level: "Principiante" },
+          { name: "Virtual Box", logo: "logos/virtualbox.svg", level: "Intermedio" },
         ].map((env) => (
           <SkillCard key={env.name} {...env} />
         ))}
@@ -476,12 +476,12 @@ export default function App() {
       <h3 className="text-2xl font-semibold mb-6">IA & Productividad</h3>
       <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
         {[
-          { name: "ChatGPT", logo: "/logos/openai.png", level: "Avanzado" },
-          { name: "Claude", logo: "/logos/claude.png", level: "Intermedio" },
-          { name: "Gemini", logo: "/logos/googlegemini.png", level: "Avanzado" },
-          { name: "Hugging Face", logo: "/logos/huggingface.svg", level: "Intermedio" },
-          { name: "Mistral IA", logo: "/logos/mistralai.svg", level: "Intermedio" },
-          { name: "DeepSeek", logo: "/logos/deepl.png", level: "Principiante" },
+          { name: "ChatGPT", logo: "logos/openai.png", level: "Avanzado" },
+          { name: "Claude", logo: "logos/claude.png", level: "Intermedio" },
+          { name: "Gemini", logo: "logos/googlegemini.png", level: "Avanzado" },
+          { name: "Hugging Face", logo: "logos/huggingface.svg", level: "Intermedio" },
+          { name: "Mistral IA", logo: "logos/mistralai.svg", level: "Intermedio" },
+          { name: "DeepSeek", logo: "logos/deepl.png", level: "Principiante" },
         ].map((ai) => (
           <SkillCard key={ai.name} {...ai} />
         ))}
@@ -509,9 +509,9 @@ export default function App() {
       <h3 className="text-2xl font-semibold mb-6">Idiomas</h3>
       <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
         {[
-          { name: "Español", logo: "/logos/es.svg", nivel: "Nativo" },
-          { name: "Inglés", logo: "/logos/gb.svg", nivel: "Intermedio - Avanzado" },
-          { name: "Portugués", logo: "/logos/br.svg", nivel: "Avanzado" },
+          { name: "Español", logo: "logos/es.svg", nivel: "Nativo" },
+          { name: "Inglés", logo: "logos/gb.svg", nivel: "Intermedio - Avanzado" },
+          { name: "Portugués", logo: "logos/br.svg", nivel: "Avanzado" },
         ].map((lang) => (
           <div key={lang.name} className="w-full flex flex-col items-center justify-center backdrop-blur-lg bg-white/10 border border-white/30 rounded-xl shadow-lg p-6 hover:scale-105 hover:bg-white/20 transition">
             <img src={lang.logo} alt={lang.name} className="w-12 h-12 mb-2" />
@@ -538,7 +538,7 @@ export default function App() {
             href="mailto:knuppelholzadrian@gmail.com"
             className="flex flex-col items-center justify-center text-center backdrop-blur-lg bg-white/10 border border-white/30 rounded-xl shadow-lg p-6 hover:scale-105 hover:bg-white/20 transition"
           >
-            <img src="/logos/gmail.svg" alt="Email" className="w-12 h-12 mb-4 filter invert" />
+            <img src="logos/gmail.svg" alt="Email" className="w-12 h-12 mb-4 filter invert" />
             <span className="font-semibold">Correo Electrónico</span>
             <p className="text-sm opacity-80 mt-2">knuppelholzadrian@gmail.com</p>
           </a>
@@ -549,7 +549,7 @@ export default function App() {
             target="_blank"
             className="flex flex-col items-center justify-center text-center backdrop-blur-lg bg-white/10 border border-white/30 rounded-xl shadow-lg p-6 hover:scale-105 hover:bg-white/20 transition"
           >
-            <img src="/logos/whatsapp.svg" alt="WhatsApp" className="w-12 h-12 mb-4 filter invert" />
+            <img src="logos/whatsapp.svg" alt="WhatsApp" className="w-12 h-12 mb-4 filter invert" />
             <span className="font-semibold">WhatsApp</span>
             <p className="text-sm opacity-80 mt-2">+54 9 3764 716434</p>
           </a>
@@ -560,7 +560,7 @@ export default function App() {
             target="_blank"
             className="flex flex-col items-center justify-center text-center backdrop-blur-lg bg-white/10 border border-white/30 rounded-xl shadow-lg p-6 hover:scale-105 hover:bg-white/20 transition"
           >
-            <img src="/logos/linkedIn.svg" alt="LinkedIn" className="w-12 h-12 mb-4 filter invert" />
+            <img src="logos/linkedIn.svg" alt="LinkedIn" className="w-12 h-12 mb-4 filter invert" />
             <span className="font-semibold">LinkedIn</span>
             <p className="text-sm opacity-80 mt-2">linkedin.com/in/adrian-knuppelholz</p>
           </a>
