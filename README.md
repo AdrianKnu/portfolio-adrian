@@ -1,12 +1,45 @@
-# React + Vite
+# 🚀 Portafolio Web - Adrian Knuppelholz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## 📌 Descripción
+Este es mi portafolio personal desarrollado para mostrar mi **experiencia, proyectos y habilidades** como desarrollador.  
+El objetivo es contar con una presentación profesional en línea que refleje mis conocimientos en **backend, frontend e inteligencia artificial**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+La página está desplegada en **GitHub Pages** 👉 [Ver aquí](https://adrianknu.github.io/portfolio-adrian/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tecnologías Utilizadas
+
+### ⚡ Frontend
+- [React](https://react.dev/) ⚛️
+- [Vite](https://vitejs.dev/) ⚡
+- [Tailwind CSS](https://tailwindcss.com/) 🎨
+- [Framer Motion](https://www.framer.com/motion/) ✨ Animaciones
+- [React Typed](https://www.npmjs.com/package/react-typed) ⌨️ Efecto typing
+- [React Icons](https://react-icons.github.io/react-icons/) 🔗 Iconografía
+
+---
+
+## 🌟 Características
+
+- 🎨 **Diseño moderno y minimalista** con **Glassmorphism**
+- 📱 **Responsive Design**: Adaptado a desktop, tablet y móvil
+- 🌌 **Hero animado** con blobs en movimiento y efecto typing
+- 🖼️ **Sección de Proyectos** con links a repositorios en GitHub
+- 💡 **Skills organizadas** por categorías con hover que muestra nivel (Principiante / Intermedio / Avanzado)
+- ✨ Animaciones suaves con **Framer Motion**
+- 🌍 Idiomas soportados: Español, Inglés, Portugués (estructura preparada)
+
+---
+
+## 🚀 Deploy en GitHub Pages
+
+Este proyecto está configurado para **GitHub Pages** usando `vite.config.js` con:
+
+```js
+export default defineConfig({
+  plugins: [react()],
+  base: '/portfolio-adrian/',
+})
+
