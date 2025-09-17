@@ -349,7 +349,7 @@ export default function App() {
       <div>
         <h3 className="text-2xl font-semibold">Proyecto X</h3>
         <p className="mt-2 text-sm opacity-90">
-          Actualmente en desarrollo, con el fin de ampliar el porfolio.
+          Actualmente en desarrollo, con el fin de ampliar el portfolio.
         </p>
         <p className="mt-3 text-xs opacity-80">Tecnologías: Java, Selenium, API Rest</p>
       </div>
