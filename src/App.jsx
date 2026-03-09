@@ -3,35 +3,28 @@ import Navbar from "./Navbar";
 import { motion } from "framer-motion";
 import { ReactTyped } from "react-typed";
 import SkillCard from "./SkillCard";
+import BackgroundLights from "./BackgroundLights";
 
 function GlassCard({ children, className = "", colorHex = "#ffffff", as: Component = "div", ...props }) {
   return (
     <Component
-      className={`relative backdrop-blur-lg border rounded-xl shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden ${className}`}
+      className={`relative backdrop-blur-xl border rounded-[2.5rem] shadow-2xl transition-all duration-500 overflow-hidden ${className}`}
       style={{
-        backgroundColor: "rgba(255, 255, 255, 0.05)",
-        borderColor: "rgba(255, 255, 255, 0.1)",
-        '--hover-bg': `${colorHex}15`,
-        '--hover-border': `${colorHex}80`,
-        '--hover-shadow': `0 0 20px ${colorHex}40`
+        backgroundColor: "rgba(255, 255, 255, 0.03)",
+        borderColor: "rgba(255, 255, 255, 0.08)",
+        '--hover-bg': `${colorHex}10`,
+        '--hover-border': `${colorHex}40`,
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.backgroundColor = 'var(--hover-bg)';
         e.currentTarget.style.borderColor = 'var(--hover-border)';
-        e.currentTarget.style.boxShadow = 'var(--hover-shadow)';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-        e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-        e.currentTarget.style.boxShadow = 'none';
+        e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.03)';
+        e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
       }}
       {...props}
     >
-      {/* Reflexión brillante (liquid glass move effect) */}
-      <div className="absolute inset-0 -translate-x-full hover:translate-x-full 
-                      transition-transform duration-700 ease-in-out 
-                      bg-gradient-to-r from-transparent via-white/10 to-transparent 
-                      rotate-12 pointer-events-none"></div>
       {children}
     </Component>
   );
@@ -43,9 +36,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen text-white relative">
-      {/* === Fondo global con textura oscura + luces multicolores === */}
-      {/* === Fondo global con textura oscura basada en HTML provisto === */}
-      <div className="fixed inset-0 -z-10 bg-base-bg overflow-hidden" />
+      <BackgroundLights />
 
       {/* === Navbar === */}
       <Navbar />
@@ -57,46 +48,47 @@ export default function App() {
         id="inicio"
         className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden"
       >
-        <div className="relative z-10 px-6 max-w-3xl">
-          {/* Nombre */}
-          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">
-            Adrian Knüppelholz
-          </h1>
+        <div className="relative z-10 px-6 max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-7xl md:text-9xl font-display font-bold tracking-tighter leading-none mb-6">
+              Hola. Soy <span className="text-blue-400">Adrian</span>.
+            </h1>
 
-          {/* Subtítulo con typing */}
-          <p className="mt-4 text-lg md:text-2xl font-light opacity-90">
-            <ReactTyped
-              strings={[
-                "Backend Developer",
-                "AI Enthusiast",
-                "Teacher Assistant",
-              ]}
-              typeSpeed={60}
-              backSpeed={40}
-              backDelay={2000}
-              loop
-              showCursor={true}
-              cursorChar="|"
-              smartBackspace={true}
-            />
-          </p>
+            <p className="text-xl md:text-3xl font-light opacity-70 mb-12">
+              <ReactTyped
+                strings={[
+                  "Backend Developer",
+                  "AI Enthusiast",
+                  "Teacher Assistant",
+                ]}
+                typeSpeed={60}
+                backSpeed={40}
+                backDelay={2000}
+                loop
+                showCursor={true}
+              />
+            </p>
 
-          {/* Botones */}
-          <div className="mt-8 flex flex-wrap gap-4 justify-center">
-            <a
-              href="CV Adrian Knuppelholz.pdf"
-              target="_blank"
-              className="px-6 py-3 bg-white/20 border border-white/40 rounded-xl text-lg font-medium hover:bg-white/40 transition"
-            >
-              📄 Descargar CV
-            </a>
-            <a
-              href="#contacto"
-              className="px-6 py-3 bg-purple-600/70 border border-purple-400 rounded-xl text-lg font-medium hover:bg-purple-700/90 transition"
-            >
-              📧 Contacto
-            </a>
-          </div>
+            <div className="flex flex-wrap gap-6 justify-center">
+              <a
+                href="#contacto"
+                className="px-8 py-4 bg-white text-black rounded-full text-lg font-bold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
+              >
+                Charlemos 👋
+              </a>
+              <a
+                href="CV Adrian Knuppelholz.pdf"
+                target="_blank"
+                className="px-8 py-4 border-2 border-white/20 rounded-full text-lg font-bold hover:bg-white/10 transition-all duration-300"
+              >
+                Ver CV
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -106,7 +98,7 @@ export default function App() {
         id="educacion"
         className="min-h-screen flex flex-col items-center justify-center py-20 px-6"
       >
-        <h2 className="text-4xl font-bold mb-12">Educación & Certificaciones</h2>
+        <h2 className="text-5xl md:text-6xl font-display font-bold mb-20 text-center">Educación</h2>
 
         <div className="relative max-w-4xl w-full">
           {/* Línea central */}
@@ -227,7 +219,7 @@ export default function App() {
         id="experiencia"
         className="min-h-screen flex flex-col items-center justify-center py-20 px-6"
       >
-        <h2 className="text-4xl font-bold mb-12">Experiencia </h2>
+        <h2 className="text-5xl md:text-6xl font-display font-bold mb-20 text-center">Experiencia</h2>
 
         <div className="relative max-w-4xl w-full">
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-1 bg-white/40"></div>
@@ -300,7 +292,7 @@ export default function App() {
         id="proyectos"
         className="min-h-screen flex flex-col items-center justify-center py-20 px-6"
       >
-        <h2 className="text-4xl font-bold mb-12">Proyectos</h2>
+        <h2 className="text-5xl md:text-6xl font-display font-bold mb-20 text-center">Proyectos</h2>
 
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full">
 
@@ -374,7 +366,7 @@ export default function App() {
         id="skills"
         className="min-h-screen flex flex-col items-center justify-center py-20 px-6"
       >
-        <h2 className="text-4xl font-bold mb-12">Skills</h2>
+        <h2 className="text-5xl md:text-6xl font-display font-bold mb-20 text-center">Skills</h2>
 
         <div className="max-w-6xl w-full space-y-16">
 
@@ -532,7 +524,7 @@ export default function App() {
         id="contacto"
         className="min-h-screen flex flex-col items-center justify-center py-20 px-6"
       >
-        <h2 className="text-4xl font-bold mb-12">Contacto</h2>
+        <h2 className="text-5xl md:text-6xl font-display font-bold mb-20 text-center">Contacto</h2>
 
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-5xl w-full justify-center place-items-center">
           {/* Correo */}

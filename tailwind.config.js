@@ -8,17 +8,11 @@ export default {
     extend: {
       colors: {
         'base-bg': '#0a0a0f',
-        'surface-card': '#12121a',
-        'border-card': '#1e1e2e',
-        'text-main': '#e8e8f0',
-        'text-muted': '#6b6b8a',
-        'accent-1': '#7c3aed',
-        'accent-2': '#0ea5e9',
-        'accent-3': '#10b981',
-        'accent-4': '#f59e0b',
-        'accent-5': '#f43f5e',
-        'accent-6': '#8b5cf6',
-        'accent-7': '#06b6d4',
+        'surface-card': '#16161a', // Slightly lighter for Sean's style
+        'border-card': 'rgba(255, 255, 255, 0.1)',
+        'text-main': '#f8f8f8',
+        'text-muted': '#a0a0ab',
+        'accent-teal': '#4C6763', // Sean's link color
       },
       keyframes: {
         fadeIn: {
@@ -35,8 +29,8 @@ export default {
         shine: "shine 1s ease-out",
       },
       fontFamily: {
-        mono: ['"Space Mono"', 'monospace'],
-        sans: ['"Syne"', 'sans-serif'],
+        display: ['"Fraunces"', 'serif'],
+        sans: ['"Outfit"', 'sans-serif'],
       }
     },
   },

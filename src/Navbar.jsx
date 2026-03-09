@@ -12,7 +12,6 @@ const sections = [
 
 export default function Navbar() {
   const [active, setActive] = useState("inicio");
-  const [indicatorStyle, setIndicatorStyle] = useState({});
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -38,47 +37,20 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const activeLink = document.querySelector(`#nav-${active} a`);
-    const navList = document.querySelector("#nav-list");
-
-    if (activeLink && navList) {
-      const linkRect = activeLink.getBoundingClientRect();
-      const listRect = navList.getBoundingClientRect();
-
-      setIndicatorStyle({
-        transform: `translateX(${linkRect.left - listRect.left}px) translateY(${linkRect.top - listRect.top}px)`,
-        width: `${linkRect.width}px`,
-        height: `${linkRect.height}px`,
-      });
-    }
-  }, [active]);
-
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-lg border-b border-white/20 z-50">
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center py-3">
-        {/* Nombre a la izquierda */}
-        <h1 className="text-lg md:text-xl font-bold tracking-wide text-white">
-          Adrian Knuppelholz
-        </h1>
-
-        {/* === Desktop Nav === */}
-        <ul
-          id="nav-list"
-          className="hidden md:flex relative space-x-6 text-white font-medium"
-        >
-          {/* Indicador cristal */}
-          <div
-            className="absolute rounded-lg liquid-glass backdrop-blur-lg shadow-md transition-all duration-500 ease-in-out"
-            style={indicatorStyle}
-          ></div>
-
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-2xl">
+      <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-4 py-2 flex justify-between items-center shadow-2xl">
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex items-center w-full justify-around space-x-1">
           {sections.map((s) => (
-            <li key={s.id} id={`nav-${s.id}`} className="relative z-10">
+            <li key={s.id}>
               <a
                 href={`#${s.id}`}
                 onClick={() => setActive(s.id)}
-                className="px-3 py-2 block"
+                className={`px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium ${active === s.id
+                    ? "bg-white/10 text-white shadow-inner"
+                    : "text-white/60 hover:text-white"
+                  }`}
               >
                 {s.label}
               </a>
@@ -86,28 +58,34 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* === Mobile Hamburger === */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-white text-3xl focus:outline-none"
-        >
-          {menuOpen ? <HiX /> : <HiMenu />}
-        </button>
+        {/* Mobile Header Version */}
+        <div className="md:hidden flex justify-between items-center w-full px-4 py-1">
+          <span className="font-display font-bold text-white tracking-tight">AK</span>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-white text-2xl focus:outline-none"
+          >
+            {menuOpen ? <HiX /> : <HiMenu />}
+          </button>
+        </div>
       </div>
 
-      {/* === Mobile Menu === */}
+      {/* Mobile Menu Dropdown */}
       {menuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white/10 backdrop-blur-lg border-b border-white/20 shadow-lg">
-          <ul className="flex flex-col items-center py-4 space-y-4 text-white font-medium">
+        <div className="md:hidden mt-2 bg-white/10 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-xl overflow-hidden p-2">
+          <ul className="flex flex-col space-y-1">
             {sections.map((s) => (
               <li key={s.id}>
                 <a
                   href={`#${s.id}`}
                   onClick={() => {
                     setActive(s.id);
-                    setMenuOpen(false); // 🔑 Cierra menú al clickear
+                    setMenuOpen(false);
                   }}
-                  className="px-4 py-2 rounded-lg hover:bg-white/20 transition"
+                  className={`block px-6 py-4 rounded-2xl transition-all duration-300 text-base font-medium ${active === s.id
+                      ? "bg-white/20 text-white"
+                      : "text-white/70 hover:bg-white/5"
+                    }`}
                 >
                   {s.label}
                 </a>
