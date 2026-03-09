@@ -1,26 +1,44 @@
 @import "tailwindcss";
+
 html {
   scroll-behavior: smooth;
 }
+
 @keyframes liquid-move {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
 .liquid-glass {
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0.15),
-    rgba(255, 255, 255, 0.3)
-  );
+  background: linear-gradient(120deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.3));
   background-size: 200% 200%;
-  animation: liquid-move 6s ease-in-out infinite;
+}
+
+body {
+  background: #0a0a0f;
+  color: #e8e8f0;
+  font-family: 'Syne', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
 }
