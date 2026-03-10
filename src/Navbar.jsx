@@ -38,8 +38,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-2xl">
-      <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-4 py-2 flex justify-between items-center shadow-2xl">
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-3xl">
+      <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 flex justify-between items-center shadow-2xl overflow-hidden">
         {/* Desktop Nav */}
         <ul className="hidden md:flex items-center w-full justify-around space-x-1">
           {sections.map((s) => (
@@ -47,9 +47,9 @@ export default function Navbar() {
               <a
                 href={`#${s.id}`}
                 onClick={() => setActive(s.id)}
-                className={`px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium ${active === s.id
-                    ? "bg-white/10 text-white shadow-inner"
-                    : "text-white/60 hover:text-white"
+                className={`px-4 py-2 rounded-full transition-all duration-300 text-lg font-medium ${active === s.id
+                  ? "bg-white/10 text-white shadow-inner"
+                  : "text-white/60 hover:text-white"
                   }`}
               >
                 {s.label}
@@ -83,8 +83,8 @@ export default function Navbar() {
                     setMenuOpen(false);
                   }}
                   className={`block px-6 py-4 rounded-2xl transition-all duration-300 text-base font-medium ${active === s.id
-                      ? "bg-white/20 text-white"
-                      : "text-white/70 hover:bg-white/5"
+                    ? "bg-white/20 text-white"
+                    : "text-white/70 hover:bg-white/5"
                     }`}
                 >
                   {s.label}

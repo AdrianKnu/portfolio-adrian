@@ -48,14 +48,14 @@ export default function App() {
         id="inicio"
         className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden"
       >
-        <div className="relative z-10 px-6 max-w-4xl">
+        <div className="relative z-10 px-6 max-w-6xl">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-7xl md:text-9xl font-display font-bold tracking-tighter leading-none mb-6">
-              Hola. Soy <span className="text-blue-400">Adrian</span>.
+            <h1 className="text-3xl sm:text-5xl md:text-8xl font-display font-bold tracking-tighter leading-none mb-6">
+              Hola. Soy <span className="text-blue-400">Adrian Knuppelholz</span>.
             </h1>
 
             <p className="text-xl md:text-3xl font-light opacity-70 mb-12">
