@@ -74,12 +74,28 @@ export default function App() {
             </p>
 
             <div className="flex flex-wrap gap-6 justify-center">
-              <a
+              <motion.a
                 href="#contacto"
-                className="px-8 py-4 bg-white text-black rounded-full text-lg font-bold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
+                className="group relative px-8 py-4 bg-white/5 border border-white/10 backdrop-blur-md text-white rounded-full text-lg font-bold transition-all duration-300 overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                animate={{ 
+                  y: [0, -5, 0],
+                }}
+                transition={{ 
+                  y: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                }}
               >
-                Charlemos 👋
-              </a>
+                {/* Border Beam Animation */}
+                <div className="border-beam" />
+                
+                <span className="relative z-10 flex items-center gap-2">
+                  Charlemos <span className="group-hover:translate-x-1 transition-transform">👋</span>
+                </span>
+
+                {/* Subtle Hover Glow */}
+                <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </motion.a>
               <a
                 href="CV Adrian Knuppelholz.pdf"
                 target="_blank"
@@ -137,13 +153,15 @@ export default function App() {
                   +430 horas de formación intensiva en desarrollo backend con Java,
                   Spring Boot, testing y clean code.
                 </p>
-                <a
+                <motion.a
                   href="https://egg-csv-bulk-certificates-prod.s3.amazonaws.com/certificates/66c4eb8cdc7bbffc897ab266-1745273206205.pdf"
                   target="_blank"
-                  className="relative z-10 mt-4 inline-block px-4 py-2 bg-white/20 border border-white/40 rounded-lg hover:bg-white/40 transition"
+                  className="relative z-10 mt-4 inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-lg font-medium transition-all duration-300"
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.2)", borderColor: "rgba(255, 255, 255, 0.4)" }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   📄 Ver certificado
-                </a>
+                </motion.a>
               </GlassCard>
             </div>
           </div>
@@ -159,13 +177,15 @@ export default function App() {
               <GlassCard className="p-6" colorHex="#0ea5e9">
                 <p className="font-bold">Scrum Fundamentals Certified (SFC™)</p>
                 <p className="text-sm opacity-80">Mar 2024</p>
-                <a
+                <motion.a
                   href="https://www.scrumstudy.com/certification/verify?type=SFC&number=1020480"
                   target="_blank"
-                  className="relative z-10 mt-4 inline-block px-4 py-2 bg-white/20 border border-white/40 rounded-lg hover:bg-white/40 transition"
+                  className="relative z-10 mt-4 inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-lg font-medium transition-all duration-300"
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.2)", borderColor: "rgba(255, 255, 255, 0.4)" }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   📄 Ver certificado
-                </a>
+                </motion.a>
               </GlassCard>
             </div>
           </div>
@@ -184,13 +204,15 @@ export default function App() {
                 <p className="mt-2">
                   Habilidades clave en la creación de contenido multimedia y uso de plataformas de IA para optimizar la productividad.
                 </p>
-                <a
+                <motion.a
                   href="https://egg-csv-bulk-certificates-prod.s3.amazonaws.com/certificates/688c0e99ee2afc52c1acd508-1755891375001.pdf"
                   target="_blank"
-                  className="relative z-10 mt-4 inline-block px-4 py-2 bg-white/20 border border-white/40 rounded-lg hover:bg-white/40 transition"
+                  className="relative z-10 mt-4 inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-lg font-medium transition-all duration-300"
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.2)", borderColor: "rgba(255, 255, 255, 0.4)" }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   📄 Ver certificado
-                </a>
+                </motion.a>
               </GlassCard>
             </div>
           </div>
@@ -306,14 +328,16 @@ export default function App() {
               <p className="mt-3 text-xs opacity-80">Tecnologías: PostgreSQL</p>
             </div>
             <div className="mt-6 flex gap-3 justify-center">
-              <a
+              <motion.a
                 href="https://github.com/AdrianKnu/TPI_TEC_DE_BDD"
                 target="_blank"
-                className="relative z-10 flex items-center gap-2 px-4 py-2 bg-white/20 border border-white/40 rounded-lg hover:bg-white/40 transition"
+                className="relative z-10 flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-lg font-medium transition-all duration-300"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.2)", borderColor: "rgba(255, 255, 255, 0.4)" }}
+                whileTap={{ scale: 0.95 }}
               >
                 <img src="logos/github.svg" alt="GitHub" className="w-5 h-5 filter invert" />
                 <span>GitHub</span>
-              </a>
+              </motion.a>
             </div>
           </GlassCard>
 
@@ -327,14 +351,16 @@ export default function App() {
               <p className="mt-3 text-xs opacity-80">Tecnologías: React, Vite, TailwindCSS</p>
             </div>
             <div className="mt-6 flex gap-3 justify-center">
-              <a
+              <motion.a
                 href="https://github.com/AdrianKnu/portfolio-adrian"
                 target="_blank"
-                className="relative z-10 flex items-center gap-2 px-4 py-2 bg-white/20 border border-white/40 rounded-lg hover:bg-white/40 transition"
+                className="relative z-10 flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-lg font-medium transition-all duration-300"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.2)", borderColor: "rgba(255, 255, 255, 0.4)" }}
+                whileTap={{ scale: 0.95 }}
               >
                 <img src="logos/github.svg" alt="GitHub" className="w-5 h-5 filter invert" />
                 <span>GitHub</span>
-              </a>
+              </motion.a>
             </div>
           </GlassCard>
 
@@ -348,14 +374,16 @@ export default function App() {
               <p className="mt-3 text-xs opacity-80">Tecnologías: Java, Selenium, API Rest</p>
             </div>
             <div className="mt-6 flex gap-3 justify-center">
-              <a
+              <motion.a
                 href="https://github.com/usuario/selenium-tests"
                 target="_blank"
-                className="relative z-10 flex items-center gap-2 px-4 py-2 bg-white/20 border border-white/40 rounded-lg hover:bg-white/40 transition"
+                className="relative z-10 flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-lg font-medium transition-all duration-300"
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.2)", borderColor: "rgba(255, 255, 255, 0.4)" }}
+                whileTap={{ scale: 0.95 }}
               >
                 <img src="logos/github.svg" alt="GitHub" className="w-5 h-5 filter invert" />
                 <span>GitHub</span>
-              </a>
+              </motion.a>
             </div>
           </GlassCard>
         </div>
@@ -503,15 +531,15 @@ export default function App() {
             <h3 className="text-2xl font-semibold mb-6">Idiomas</h3>
             <div className="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
               {[
-                { name: "Español", logo: "logos/es.svg", nivel: "Nativo" },
-                { name: "Inglés", logo: "logos/gb.svg", nivel: "Intermedio - Avanzado" },
-                { name: "Portugués", logo: "logos/br.svg", nivel: "Avanzado" },
+                { name: "Español", logo: "logos/es.svg", nivel: "Nativo", colorHex: "#f59e0b" },
+                { name: "Inglés", logo: "logos/gb.svg", nivel: "Intermedio - Avanzado", colorHex: "#3b82f6" },
+                { name: "Portugués", logo: "logos/br.svg", nivel: "Avanzado", colorHex: "#10b981" },
               ].map((lang) => (
-                <div key={lang.name} className="w-full flex flex-col items-center justify-center backdrop-blur-lg bg-white/10 border border-white/30 rounded-xl shadow-lg p-6 hover:scale-105 hover:bg-white/20 transition">
-                  <img src={lang.logo} alt={lang.name} className="w-12 h-12 mb-2" />
-                  <span className="font-semibold">{lang.name}</span>
-                  <p className="text-xs opacity-80 mt-1">{lang.nivel}</p>
-                </div>
+                <GlassCard key={lang.name} className="p-6 flex flex-col items-center justify-center text-center" colorHex={lang.colorHex}>
+                  <img src={lang.logo} alt={lang.name} className="w-12 h-12 mb-4 drop-shadow-lg" />
+                  <span className="text-xl font-bold font-display">{lang.name}</span>
+                  <p className="text-sm font-medium opacity-70 mt-1">{lang.nivel}</p>
+                </GlassCard>
               ))}
             </div>
           </div>

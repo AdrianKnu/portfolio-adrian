@@ -53,6 +53,34 @@ body::before {
   mix-blend-mode: overlay;
 }
 
+@keyframes border-beam {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.border-beam {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: inherit;
+  mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+  mask-image: linear-gradient(transparent, transparent), linear-gradient(#000, #000);
+}
+
+.border-beam::after {
+  content: "";
+  position: absolute;
+  aspect-ratio: 1;
+  width: 100px;
+  background: linear-gradient(to left, #3b82f6, transparent);
+  offset-anchor: 100% 50%;
+  offset-path: rect(0 auto auto 0 round 100px);
+  animation: border-beam 4s linear infinite;
+}
+
 section {
   padding-top: 10rem;
   padding-bottom: 10rem;
