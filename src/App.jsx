@@ -79,16 +79,16 @@ export default function App() {
                 className="group relative px-8 py-4 bg-white/5 border border-white/10 backdrop-blur-md text-white rounded-full text-lg font-bold transition-all duration-300 overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                animate={{ 
+                animate={{
                   y: [0, -5, 0],
                 }}
-                transition={{ 
+                transition={{
                   y: { duration: 2, repeat: Infinity, ease: "easeInOut" },
                 }}
               >
                 {/* Border Beam Animation */}
                 <div className="border-beam" />
-                
+
                 <span className="relative z-10 flex items-center gap-2">
                   Charlemos <span className="group-hover:translate-x-1 transition-transform">👋</span>
                 </span>
@@ -321,11 +321,11 @@ export default function App() {
           {/* Proyecto 1 */}
           <GlassCard className="p-6 flex flex-col justify-between" colorHex="#f59e0b">
             <div>
-              <h3 className="text-2xl font-semibold">Proyecto Final de Tecnología de Base de Datos</h3>
+              <h3 className="text-2xl font-semibold">Gestión de Obras Públicas</h3>
               <p className="mt-2 text-sm opacity-90">
-                Scripts avanzados para gestión empresarial con PostgreSQL.
+                Sistema avanzado para la gestión de obras públicas, con lógica automatizada mediante funciones y triggers para certificados de pago, redeterminaciones de precios y auditoría integral de cambios.
               </p>
-              <p className="mt-3 text-xs opacity-80">Tecnologías: PostgreSQL</p>
+              <p className="mt-3 text-xs opacity-80">Tecnologías: PostgreSQL, PL/pgSQL, Triggers, Views</p>
             </div>
             <div className="mt-6 flex gap-3 justify-center">
               <motion.a
@@ -367,15 +367,15 @@ export default function App() {
           {/* Proyecto 3 */}
           <GlassCard className="p-6 flex flex-col justify-between" colorHex="#7c3aed">
             <div>
-              <h3 className="text-2xl font-semibold">Proyecto X</h3>
+              <h3 className="text-2xl font-semibold">Note-Taking Application</h3>
               <p className="mt-2 text-sm opacity-90">
-                Actualmente en desarrollo, con el fin de ampliar el portfolio.
+                Aplicación Full-Stack para la gestión de notas, que permite crear, editar, eliminar y archivar notas, además de organizar por categorías y filtrar.
               </p>
-              <p className="mt-3 text-xs opacity-80">Tecnologías: Java, Selenium, API Rest</p>
+              <p className="mt-3 text-xs opacity-80">Tecnologías: NestJS, React, SQLite, TypeORM</p>
             </div>
             <div className="mt-6 flex gap-3 justify-center">
               <motion.a
-                href="https://github.com/usuario/selenium-tests"
+                href="https://github.com/AdrianKnu/full-stack-note-taking-application"
                 target="_blank"
                 className="relative z-10 flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-lg font-medium transition-all duration-300"
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.2)", borderColor: "rgba(255, 255, 255, 0.4)" }}
