@@ -1,45 +1,34 @@
-# 🚀 Portafolio Web - Adrian Knuppelholz
+# Portfolio de Adrián Knuppelholz
 
+Sitio personal hecho con React, Vite, Tailwind CSS y Motion. Tres idiomas (ES, EN, PT), tema claro y oscuro automático, y animaciones ligadas al scroll.
 
-## 📌 Descripción
-Este es mi portafolio personal desarrollado para mostrar mi **experiencia, proyectos y habilidades** como desarrollador.  
-El objetivo es contar con una presentación profesional en línea que refleje mis conocimientos en **backend, frontend e inteligencia artificial**.
+## Comandos
 
-La página está desplegada en **GitHub Pages** 👉 [Ver aquí](https://adrianknu.github.io/portfolio-adrian/)
+```bash
+npm install
+npm run dev       # desarrollo en http://localhost:5173
+npm run build     # genera la carpeta dist/
+npm run preview   # sirve dist/ para probar el build
+```
 
----
+`SINGLE=1 npm run build` genera un único `index.html` con todo incluido (útil para previsualizar o subir a cualquier hosting).
 
-## 🛠️ Tecnologías Utilizadas
+## Dónde editar el contenido
 
-### ⚡ Frontend
-- [React](https://react.dev/) ⚛️
-- [Vite](https://vitejs.dev/) ⚡
-- [Tailwind CSS](https://tailwindcss.com/) 🎨
-- [Framer Motion](https://www.framer.com/motion/) ✨ Animaciones
-- [React Typed](https://www.npmjs.com/package/react-typed) ⌨️ Efecto typing
-- [React Icons](https://react-icons.github.io/react-icons/) 🔗 Iconografía
+| Qué                                           | Archivo          |
+| --------------------------------------------- | ---------------- |
+| Todos los textos (ES, EN, PT)                 | `src/content.js` |
+| Contacto, stack, certificaciones, proyectos   | `src/data.js`    |
+| Colores, tipografía y modo oscuro             | `src/index.css`  |
+| Saludos de la pantalla de bienvenida          | `src/components/Intro.jsx` |
+| Ilustraciones de cada proyecto                | `src/components/Motifs.jsx` |
 
----
+Para agregar un proyecto: suma una entrada en `PROJECTS` (`src/data.js`) y su texto en los tres idiomas dentro de `projects.items` (`src/content.js`).
 
-## 🌟 Características
+## Publicar en GitHub Pages
 
-- 🎨 **Diseño moderno y minimalista** con **Glassmorphism**
-- 📱 **Responsive Design**: Adaptado a desktop, tablet y móvil
-- 🌌 **Hero animado** con blobs en movimiento y efecto typing
-- 🖼️ **Sección de Proyectos** con links a repositorios en GitHub
-- 💡 **Skills organizadas** por categorías con hover que muestra nivel (Principiante / Intermedio / Avanzado)
-- ✨ Animaciones suaves con **Framer Motion**
-- 🌍 Idiomas soportados: Español, Inglés, Portugués (estructura preparada)
+1. Sube el proyecto a la rama `main` del repositorio (por ejemplo `portfolio-adrian`).
+2. En GitHub, ve a Settings, Pages y elige **GitHub Actions** como fuente.
+3. Cada push a `main` compila y publica el sitio con `.github/workflows/deploy.yml`.
 
----
-
-## 🚀 Deploy en GitHub Pages
-
-Este proyecto está configurado para **GitHub Pages** usando `vite.config.js` con:
-
-```js
-export default defineConfig({
-  plugins: [react()],
-  base: '/portfolio-adrian/',
-})
-
+El build usa rutas relativas (`base: "./"`), así que funciona tanto en `usuario.github.io/repositorio/` como en un dominio propio.
